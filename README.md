@@ -279,7 +279,9 @@ The AI agent will identify the division by zero error, decide it is fixable, and
 
 ![github](img/github.png)
 
-And that's all! The AI agent has autonomously created a PR that fixes the bug. Now we can easily accept or reject the PR after human review.
+And that's all! The AI agent has autonomously created a PR that fixes the bug. Now we can easily accept or reject the PR after human review. The bug has been fixed!
+
+![github](img/github2.png)
 
 ## Conclusion
 
