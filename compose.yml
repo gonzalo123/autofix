@@ -1,0 +1,22 @@
+services:
+  api:
+    build:
+      context: .
+    volumes:
+      - logs_volume:/src/logs
+    environment:
+      - ENVIRONMENT=production
+      - PROCESS_ID=api
+    ports:
+      - "5000:5000"
+    command: gunicorn -w 1 app:app -b 0.0.0.0:5000 --timeout 180
+
+  cloudwatch-agent:
+    build:
+      context: .docker/cw
+    volumes:
+      - logs_volume:/logs
+    environment:
+      - LOG_GROUP_NAME=/projects/autofix
+volumes:
+  logs_volume:
