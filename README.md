@@ -264,8 +264,6 @@ def handle_exception(e):
 
 @app.get("/div/<int:a>/<int:b>")
 def divide(a: int, b: int):
-    if b == 0:
-        return jsonify(error="Division by zero is not allowed"), 400
     return dict(result=a / b)
 ```
 
